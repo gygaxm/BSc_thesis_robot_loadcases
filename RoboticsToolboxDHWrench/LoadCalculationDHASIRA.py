@@ -393,7 +393,7 @@ robot.gravity = np.array([0, 0, 0])
 
 
 # sweep parameters
-num_q_steps = 1
+num_q_steps = 3
 num_qd_steps = 2
 num_qdd_steps = 2
 
@@ -567,8 +567,8 @@ df_critical_loads_coupled = pd.DataFrame(critical_load_cases_coupled)
 
 # export
 now = datetime.datetime.now()
-time_str = now.strftime("%H%M%S")
-output_filename = f"coupled_extreme_joint_wrenches_{now.date().isoformat()}_{time_str}.csv"
+time_str = now.strftime("%H%M")
+output_filename = f"DH_joint_wrenches_{num_q_steps}_q-steps_{num_qd_steps}_qd-steps_{num_qdd_steps}_q-steps_{now.date().isoformat()}_{time_str}.csv"
 
 output_columns = ['ID', 'Fx', 'Fy', 'Fz', 'Mx', 'My', 'Mz', 'q', 'qd', 'qdd']
 
